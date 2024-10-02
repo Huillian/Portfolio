@@ -1,11 +1,14 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Inter Tight", sans-serif;
+.navbar-brand img {
+  height: 35px;
+  width: auto;
+}  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0E1011;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,11 +27,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block; /* Alterado de flex para block */
   min-width: 320px;
   min-height: 100vh;
+  background: #000000;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -58,16 +62,47 @@ button:focus-visible {
   padding: 2em;
 }
 
+/* Removido o max-width para que o container-fluid ocupe toda a largura */
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%; /* Garante que o app use toda a largura disponível */
 }
+
+.ms-92 {
+  margin-left: 92px;
+}
+.me-92 {
+  margin-right: 92px;
+}
+
+/* Para navegadores baseados em WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da scrollbar vertical */
+  height: 8px; /* Altura da scrollbar horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Cor do thumb (parte que se move) */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Cor do fundo da scrollbar */
+}
+
+/* Para Firefox */
+html {
+  scrollbar-width: thin; /* Tamanho da scrollbar */
+  scrollbar-color: white black; /* Cor do thumb e do track */
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #ffffff;
     background-color: #ffffff;
   }
   a:hover {
